@@ -1,6 +1,5 @@
-
 const dateMsg = document.getElementById('date'); //div с сообщением о последнем обновлении 
-const fromInputs = document.querySelector('.row-from'); //для навешивания прослушивания события изменения input и select
+const fromInputs = document.querySelector('.row-from'); //для навешивания прослушивания изменения input и select
 const fromNum = fromInputs.querySelector('.convertFrom-input'); //input
 const fromCurrency = fromInputs.querySelector('.convertFrom-select'); //select
 
@@ -10,7 +9,6 @@ const Currencies = {
   //так как берем все значения от российского рубля:
   RUB: 1, 
 }
-
 
 const createDate = (data) => {
   const date = new Date(data);
@@ -43,22 +41,25 @@ getCurrencies();
 let memory = 'BYN'; 
 const currencyElems = document.querySelectorAll('.currence-elem');//всевдомассив из элементов div(input + span)
 
-fromInputs.addEventListener('input', (e) => {
+fromInputs.addEventListener('input', e => {
   getCurrencies(); //обновление данных курса
 
   if(e.target.classList.contains('convertFrom-select')) {
+    console.log('changed select! convertFrom-select');
+
     currencyElems.forEach((item, id) => {
-      if(item.childNodes[2].textContent === fromCurrency.value) {
+      console.dir(item);
+
+      if(item.childNodes[3].textContent === fromCurrency.value) {
         console.log('!!!!' + fromCurrency.value + id)
-        item.childNodes[2].textContent = memory;
+        item.childNodes[3].textContent = memory;
         memory = fromCurrency.value;
       }
     })
   }
 
-  currencyElems.forEach((item) => {
-    item.childNodes[1].value = (fromNum.value*Currencies[fromCurrency.value]/Currencies[item.childNodes[2].textContent]).toFixed(2);
+  currencyElems.forEach(item => {
+    item.childNodes[1].value = (fromNum.value*Currencies[fromCurrency.value]/Currencies[item.childNodes[3].textContent]).toFixed(2);
   })
-  
 })
 
