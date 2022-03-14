@@ -1,0 +1,55 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+}
+input,
+select {
+  border: 1px solid gray;
+  border-radius: 0.2rem;
+  height: 2rem;
+  font-size: 16px;
+}
+
+.calc {
+  width: 800px;
+  margin: 150px auto 0;
+  padding: 1.3rem;
+  border: 1px solid gray;
+  border-radius: 0.7rem;
+}
+.calc-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: cadetblue;
+  padding: 2rem;
+  border-radius: 0.7rem;
+}
+
+.calc-item:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.transfer-container {
+  width: 30px;
+}
+.transfer-img {
+  cursor: pointer;
+  width: 30px;
+}
+
+div #date {
+  font-size: 12px;
+  color: grey;
+}
+
+div .row-from {
+  display: flex;
+}

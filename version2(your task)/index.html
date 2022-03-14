@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Converter</title>
+</head>
+<body>
+ <main>
+   <div class="calc">
+    <h1>Сurrency converter</h1>
+    <div class="calc-wrapper">
+    
+      <div class="savings-wrapp calc-item">
+        <label for="savings">I have</label>
+        <div class="row row-from">
+          <input id="savings" class="convertFrom-input" type="number" placeholder="Enter the amount">
+          <select id="from-currency" class="convertFrom-select">
+            <option value="BYN">BYN</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CNY">CNY</option>
+            <option value="RUB">RUB</option>
+          </select>
+        </div>
+        
+      </div>
+    
+      <div class="transfer-container calc-item">
+        <img src="img/right-arrow.png" alt="transfer-img" class="transfer-img">
+      </div>
+    
+      <div class="desire-wrapp calc-item">
+        <label for="desire">I can buy</label>
+        <div class="row">
+          <div class="currence-elem">
+            <input class="convertTo-input" type="number" disabled>  <span class="currency-name">RUB</span>
+          </div>
+          <div class="currence-elem">
+            <input class="convertTo-input" type="number" disabled>  <span class="currency-name">USD</span>
+          </div>
+          <div class="currence-elem">
+            <input class="convertTo-input" type="number" disabled>  <span class="currency-name">EUR</span>
+          </div>
+          <div class="currence-elem">
+            <input class="convertTo-input" type="number" disabled>  <span class="currency-name">CNY</span>
+          </div>
+        
+        </div>
+        
+      </div>
+    
+    </div>
+
+    <div class="date-msg" id="date">Last updated: </div>
+   </div>
+   
+ </main>
+
+  
+</body>
+</html>
